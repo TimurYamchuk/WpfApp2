@@ -8,7 +8,7 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Текстовое поле для отображения выбранного цвета -->
+  
         <TextBox x:Name="ColorDisplay" 
                  Grid.Column="0" 
                  FontSize="36" 
@@ -18,7 +18,6 @@
                  IsReadOnly="True" 
                  Margin="10" />
 
-        <!-- Контейнер для кнопок -->
         <WrapPanel Grid.Column="1" Margin="10" VerticalAlignment="Top">
             <!-- Кнопки с цветами -->
             <Button Content="Navy" Foreground="Navy" Margin="2" Click="ColorButton_Click" />
