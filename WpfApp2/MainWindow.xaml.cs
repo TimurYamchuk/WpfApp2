@@ -18,14 +18,12 @@ namespace WpfApp2
                 string colorName = button.Content.ToString();
                 ColorDisplay.Text = colorName;
 
-                // Попытка преобразовать цвет из имени
                 try
                 {
                     BrushConverter converter = new BrushConverter();
                     Brush colorBrush = (Brush)converter.ConvertFromString(colorName);
                     ColorDisplay.Background = colorBrush;
 
-                    // Устанавливаем текст белым
                     ColorDisplay.Foreground = Brushes.White;
                 }
                 catch
