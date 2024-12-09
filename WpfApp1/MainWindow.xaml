@@ -1,34 +1,49 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+<Window x:Class="WpfApp1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Digit Input" Height="450" Width="800">
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinWidth="600">
     <Grid>
         <Grid.ColumnDefinitions>
-            <!-- Поле для ввода цифр -->
             <ColumnDefinition Width="*" />
-            <!-- Панель с кнопками -->
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="250" />
         </Grid.ColumnDefinitions>
 
-        <!-- Поле ввода цифр -->
-        <TextBox Name="InputField" Grid.Column="0" FontSize="20" Margin="10,10,10,10" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+        <TextBox Grid.Column="0" 
+                 FontSize="72" 
+                 VerticalContentAlignment="Center" 
+                 HorizontalContentAlignment="Left" 
+                 Margin="10" 
+                 IsReadOnly="True" 
+                 Name="InputField" />
 
-        <!-- Цифровая панель -->
-        <UniformGrid Rows="4" Columns="3" Grid.Column="1" Margin="10">
-            <Button Content="1" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="2" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="3" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="4" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="5" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="6" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="7" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="8" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="9" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="*" FontSize="18" Width="50" Height="50" Margin="5" />
-            <Button Content="0" FontSize="18" Width="50" Height="50" Margin="5" Click="Button_Click" />
-            <Button Content="#" FontSize="18" Width="50" Height="50" Margin="5" />
-        </UniformGrid>
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="7" Grid.Row="0" Grid.Column="0" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="8" Grid.Row="0" Grid.Column="1" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="9" Grid.Row="0" Grid.Column="2" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="4" Grid.Row="1" Grid.Column="0" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="5" Grid.Row="1" Grid.Column="1" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="6" Grid.Row="1" Grid.Column="2" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="1" Grid.Row="2" Grid.Column="0" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="2" Grid.Row="2" Grid.Column="1" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="3" Grid.Row="2" Grid.Column="2" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="C" Grid.Row="3" Grid.Column="0" Click="ClearButton_Click" Margin="5" FontSize="24" />
+            <Button Content="0" Grid.Row="3" Grid.Column="1" Click="Button_Click" Margin="5" FontSize="24" />
+            <Button Content="Ok" Grid.Row="3" Grid.Column="2" Click="OkButton_Click" Margin="5" FontSize="24" />
+        </Grid>
     </Grid>
-
-
 </Window>
